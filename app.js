@@ -37,6 +37,8 @@ const loadNewsDetails = async(newsId) => {
 const displayNewsDetails = details => {
     console.log(details);
 
+    
+
     const displayNewsContainer = document.getElementById('display-news-container');
     displayNewsContainer.innerHTML = ``;
     
@@ -71,6 +73,32 @@ const displayNewsDetails = details => {
     
     })
     
+}
+
+
+//display modal
+const displayModal = (img, title, author, authorImg, view, pDate) => {
+    console.log(img, title, author, authorImg, view, pDate);
+    const modalContainer = document.getElementById('exampleModalLabel');
+    modalContainer.innerText = title; 
+    const modalDetail = document.getElementById('modalDetail');
+    modalDetail.innerHTML = ` 
+    <img " class = "img-fluid" src="${img}" alt="">
+    <div>
+    <img style="width: 50px; height: 50px;" class = "mt-1 border-radious" src ="${authorImg}">
+    <span class = "">${author ? author : 'No name found'}</span>
+    <span class = "ms-5"> <i class="fa-solid fa-eye"></i> ${view} </span>
+    <span class = "ms-5">
+    <i class="fa-solid fa-star-half-stroke"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    </span>
+    <p class = "mt-3 ms-5 ps-5"> <span class = "fw-bolder">Published Date:</span> ${pDate}</p>
+    </div>
+    
+    `
 }
 
 loadCategory();
