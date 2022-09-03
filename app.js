@@ -8,19 +8,21 @@ const loadCategory = () => {
 
 const displayCategory = categories => {
     console.log(categories);
-
     const categoryContainer = document.getElementById('category-container');
     categories.forEach(category => {
         const categoryList = document.createElement('div');
         categoryList.innerHTML = `
-     <button type="button" class="btn btn-outline-primary list-group-item m-2 rounded" onclick = "loadNewsDetails('${category.category_id}')">${category.category_name}</button> 
+     <button id = "spinner" type="button" class="btn btn-outline-primary list-group-item m-2 rounded" onclick = "loadNewsDetails('${category.category_id}') ">${category.category_name}</button> 
     `
         categoryContainer.appendChild(categoryList);
+        
     })
+    
 }
 
 const loadNewsDetails = async (newsId) => {
     // console.log(newsId);
+    toggleSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${newsId}`
 
     try {
@@ -35,7 +37,7 @@ const loadNewsDetails = async (newsId) => {
 
 const displayNewsDetails = details => {
     console.log(details);
-    toggleSpinner(true);
+
     //sorting all the fetching data by total_view
     details.sort((a, b) => {
         return b.total_view - a.total_view;
@@ -81,8 +83,14 @@ const displayNewsDetails = details => {
     `
         displayNewsContainer.appendChild(displayDiv);
     })
-    toggleSpinner(false);
+   
+   toggleSpinner(false);
 }
+
+
+
+
+
 
 // spinner function
 const toggleSpinner = isLoading => {
