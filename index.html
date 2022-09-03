@@ -50,15 +50,30 @@
     </header>
     <hr>
     <main>
+        <!-- display category list -->
         <section>
             <ul id="category-container" class="list-group list-group-horizontal-lg">
 
             </ul>
 
+            <!-- display item found massage -->
+            
             <div id="message" class="mt-4 mb-4 bg-white" >
                 
             </div>
         </section>
+
+        <!-- loader / spinner -->
+
+        <section id="loader" class="d-none">
+            <div style="height: 400px" class="d-flex justify-content-center align-items-center">
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- display category -->
 
         <section>
             <div id="display-news-container" class="row row-cols-1 row-cols-md-3 g-4">

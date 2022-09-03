@@ -81,6 +81,16 @@ const displayNewsDetails = details => {
     
 }
 
+// spinner function
+const toggleSpinner = isLoading => {
+    const loadingSpinner = document.getElementById('loader');
+    if(isLoading){
+        loadingSpinner.classList.remove('d-none');
+    }else{
+        loadingSpinner.classList.add('d-none');
+    }
+}
+
 
 //display modal
 const displayModal = (img, title, author, authorImg, view, pDate) => {
