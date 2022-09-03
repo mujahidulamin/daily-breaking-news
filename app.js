@@ -71,7 +71,7 @@ const displayNewsDetails = details => {
         <span">${detail.author.name ? detail.author.name : 'No name Found'}</span> 
 
         <p class = "ms-2 mt-2 d-inline"><i class="fa-solid fa-eye"></i> ${detail.total_view ? detail.total_view : '0'}M </p>
-        <p class = "ms-5 ps-5">
+        <p class = "ms-5 ps-5 ">
             <i class="fa-solid fa-star-half-stroke"></i>
             <i class="fa-regular fa-star"></i>
             <i class="fa-regular fa-star"></i>
@@ -115,14 +115,14 @@ const displayModal = (img, title, author, authorImg, view, pDate) => {
     <img style="width: 50px; height: 50px;" class = "mt-1 border-radious" src ="${authorImg}">
     <span class = "">${author ? author : 'No name found'}</span>
     <span class = "ms-5"> <i class="fa-solid fa-eye"></i> ${view} </span>
-    <span class = "ms-5">
-    <i class="fa-solid fa-star-half-stroke"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
+    <span class = "ms-5" >
+    <i class="fa-solid fa-star-half-stroke response"></i>
+    <i class="fa-regular fa-star response"></i>
+    <i class="fa-regular fa-star response"></i>
+    <i class="fa-regular fa-star response"></i>
+    <i class="fa-regular fa-star response"></i>
     </span>
-    <p class = "mt-3 ms-5 ps-5"> <span class = "fw-bolder">Published Date:</span> ${pDate}</p>
+    <p class = "mt-lg-3 ms-lg-5 ps-5 p-date"> <span class = "fw-bolder">Published Date:</span> ${pDate}</p>
     </div>
     
     `
