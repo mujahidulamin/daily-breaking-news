@@ -17,7 +17,6 @@ const displayCategory = categories => {
     `
         categoryContainer.appendChild(categoryList);
     })
-
 }
 
 const loadNewsDetails = async (newsId) => {
@@ -36,7 +35,7 @@ const loadNewsDetails = async (newsId) => {
 
 const displayNewsDetails = details => {
     console.log(details);
-
+    toggleSpinner(true);
     //sorting all the fetching data by total_view
     details.sort((a, b) => {
         return b.total_view - a.total_view;
@@ -45,7 +44,7 @@ const displayNewsDetails = details => {
     //items found massage
     const noPhoneMeassage = document.getElementById('message');
     if (details.length !== 0) {
-        noPhoneMeassage.innerHTML = `<h2 class = "ms-3">${details.length} items found for this category</h2>`
+        noPhoneMeassage.innerHTML = `<h4 class = "ms-3">${details.length} items found for this category</h4>`
     } else {
         noPhoneMeassage.innerHTML = `<h2>No items found for this category</h2>`
     }
@@ -81,9 +80,8 @@ const displayNewsDetails = details => {
     </div>
     `
         displayNewsContainer.appendChild(displayDiv);
-
     })
-
+    toggleSpinner(false);
 }
 
 // spinner function
