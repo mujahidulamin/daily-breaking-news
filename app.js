@@ -6,6 +6,7 @@ const loadCategory = () => {
         .catch(error => console.log(error))
 }
 
+//display all the category
 const displayCategory = categories => {
     console.log(categories);
     const categoryContainer = document.getElementById('category-container');
@@ -15,9 +16,9 @@ const displayCategory = categories => {
      <button id = "spinner" type="button" class="btn btn-outline-primary list-group-item m-2 rounded" onclick = "loadNewsDetails('${category.category_id}') ">${category.category_name}</button> 
     `
         categoryContainer.appendChild(categoryList);
-        
+
     })
-    
+
 }
 
 const loadNewsDetails = async (newsId) => {
@@ -35,6 +36,8 @@ const loadNewsDetails = async (newsId) => {
 
 }
 
+
+// display all the news
 const displayNewsDetails = details => {
     console.log(details);
 
@@ -46,9 +49,9 @@ const displayNewsDetails = details => {
     //items found massage
     const noPhoneMeassage = document.getElementById('message');
     if (details.length !== 0) {
-        noPhoneMeassage.innerHTML = `<h4 class = "ms-3">${details.length} items found for this category</h4>`
+        noPhoneMeassage.innerHTML = `<h4 class = "ms-3 mt-1">${details.length} items found for this category</h4>`
     } else {
-        noPhoneMeassage.innerHTML = `<h2>No items found for this category</h2>`
+        noPhoneMeassage.innerHTML = `<h4 class = "ms-3 mt-1">No items found for this category</h4>`
     }
 
     const displayNewsContainer = document.getElementById('display-news-container');
@@ -83,12 +86,9 @@ const displayNewsDetails = details => {
     `
         displayNewsContainer.appendChild(displayDiv);
     })
-   
-   toggleSpinner(false);
+
+    toggleSpinner(false);
 }
-
-
-
 
 
 
@@ -127,5 +127,6 @@ const displayModal = (img, title, author, authorImg, view, pDate) => {
     
     `
 }
+
 loadNewsDetails('08');
 loadCategory();
