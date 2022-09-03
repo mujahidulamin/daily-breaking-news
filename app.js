@@ -8,7 +8,6 @@ const loadCategory = () => {
 
 //display all the category
 const displayCategory = categories => {
-    console.log(categories);
     const categoryContainer = document.getElementById('category-container');
     categories.forEach(category => {
         const categoryList = document.createElement('div');
@@ -22,7 +21,6 @@ const displayCategory = categories => {
 }
 
 const loadNewsDetails = async (newsId) => {
-    // console.log(newsId);
     toggleSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${newsId}`
 
@@ -39,8 +37,6 @@ const loadNewsDetails = async (newsId) => {
 
 // display all the news
 const displayNewsDetails = details => {
-    console.log(details);
-
     //sorting all the fetching data by total_view
     details.sort((a, b) => {
         return b.total_view - a.total_view;
@@ -105,7 +101,6 @@ const toggleSpinner = isLoading => {
 
 //display modal
 const displayModal = (img, title, author, authorImg, view, pDate) => {
-    console.log(img, title, author, authorImg, view, pDate);
     const modalContainer = document.getElementById('exampleModalLabel');
     modalContainer.innerText = title;
     const modalDetail = document.getElementById('modalDetail');
