@@ -36,9 +36,15 @@ const loadNewsDetails = async(newsId) => {
 
 const displayNewsDetails = details => {
     console.log(details);
-
+ 
+    //items found massage
+    const noPhoneMeassage = document.getElementById('message');
+    if(details.length !== 0){
+        noPhoneMeassage.innerHTML = `<h2 class = "ms-3">${details.length} items found for this category</h2>`
+    }else{
+        noPhoneMeassage.innerHTML = `<h2>No items found for this category</h2>`
+    }
     
-
     const displayNewsContainer = document.getElementById('display-news-container');
     displayNewsContainer.innerHTML = ``;
     
