@@ -36,6 +36,12 @@ const loadNewsDetails = async(newsId) => {
 
 const displayNewsDetails = details => {
     console.log(details);
+
+    //sorting all the fetching data by total_view
+    details.sort((a , b) =>
+    {
+        return b.total_view - a.total_view;
+    })
  
     //items found massage
     const noPhoneMeassage = document.getElementById('message');
